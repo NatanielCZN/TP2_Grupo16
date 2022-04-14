@@ -18,7 +18,6 @@ public class Principal {
 				System.out.println("El numero "+numero+" es Impar");
 			}
 		}
-		System.out.println("cantidad de repeticiones:"+i);
 		
 	}
 
