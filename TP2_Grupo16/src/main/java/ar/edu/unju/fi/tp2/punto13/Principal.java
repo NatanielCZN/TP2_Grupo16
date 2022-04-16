@@ -1,13 +1,11 @@
 package ar.edu.unju.fi.tp2.punto13;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.Calendar;
 import java.util.Scanner;
 
 public class Principal {
 
-	public static void main(String[] args) throws ParseException {
+	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		
 		/*
@@ -17,10 +15,12 @@ public class Principal {
 		int horas = scan.nextInt();
 		
 		/*
-		 * Cambio de formato para proporcionar un parametro mas corto
+		 * Creo y seteo la fecha de un objeto de la clase Calendar 
 		 */
-		SimpleDateFormat formateador = new SimpleDateFormat("dd/MM/yyyy");
-		Empleado empleado = new Empleado("Messi",formateador.parse("16/11/2006"),10,"messirve10@gmail.com.ar",0d,horas);
+		Calendar calendario = Calendar.getInstance();
+		calendario.set(2003,11,16);		
+		
+		Empleado empleado = new Empleado("Messi",calendario,10,"messirve10@gmail.com.ar",0d,horas);
 		
 		int cont = 0;
 		double sum = 0;

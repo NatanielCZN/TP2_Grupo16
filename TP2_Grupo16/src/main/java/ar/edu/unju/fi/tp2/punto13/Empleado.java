@@ -1,11 +1,11 @@
 package ar.edu.unju.fi.tp2.punto13;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.Calendar;
 
 public class Empleado {
 	private String nombre;
-	private Date fecha;
+	private Calendar fecha;
 	private Integer legajo;
 	private String email;
 	private Double sueldo;
@@ -14,7 +14,7 @@ public class Empleado {
 	/*
 	 * Constructor parametrisado
 	 */
-	public Empleado(String nombre, Date fecha, Integer legajo, String email, Double sueldo, Integer horas) {
+	public Empleado(String nombre, Calendar fecha, Integer legajo, String email, Double sueldo, Integer horas) {
 		this.nombre = nombre;
 		this.fecha = fecha;
 		this.legajo = legajo;
@@ -33,10 +33,10 @@ public class Empleado {
 		this.nombre = nombre;
 	}
 
-	public Date getFecha() {
+	public Calendar getFecha() {
 		return fecha;
 	}
-	public void setFecha(Date fecha) {
+	public void setFecha(Calendar fecha) {
 		this.fecha = fecha;
 	}
 
@@ -74,7 +74,7 @@ public class Empleado {
 		 * Cambio el formato de fecha para mostrarlo de una forma mas corta
 		 */
 		SimpleDateFormat formateador = new SimpleDateFormat("dd/MM/yyyy");
-		return "Empleado [nombre=" + nombre + ", fecha=" + formateador.format(fecha) + ", legajo=" + legajo + ", email=" + email
+		return "Empleado [nombre=" + nombre + ", fecha=" + formateador.format(fecha.getTime()) + ", legajo=" + legajo + ", email=" + email
 				+ ", sueldo=" + sueldo + ", horas=" + horas + "]";
 	}	
 }
