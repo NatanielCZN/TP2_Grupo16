@@ -85,7 +85,7 @@ public class Principal {
 		LocalDate f8 = null;
 		do {
 			try {
-				System.out.println("Ingrese otra fecha con formato dd/MM/yyyy: ");
+				System.out.println("b.6.2) Ingrese otra fecha con formato dd/MM/yyyy: ");
 				String fecha2 = scan.next();
 				f7 = LocalDate.parse(fecha2,formateador);
 				pf5.setFecha2(f7);
