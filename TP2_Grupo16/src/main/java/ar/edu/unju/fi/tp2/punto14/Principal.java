@@ -16,7 +16,5 @@ public class Principal {
 		System.out.println(empleado2.toString());
 		System.out.println(empleado3.toString());
 		System.out.println(empleado4.toString());
-
 	}
-
 }
