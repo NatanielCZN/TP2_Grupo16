@@ -12,7 +12,7 @@ public class Empleado {
 	private Integer horas;
 	
 	/*
-	 * Constructor parametrisado
+	 * Constructores parametrisados
 	 */
 	public Empleado(String nombre, Calendar fecha, Integer legajo, String email, Double sueldo, Integer horas) {
 		this.nombre = nombre;
@@ -22,6 +22,36 @@ public class Empleado {
 		this.sueldo = sueldo;
 		this.horas = horas;
 	}
+	
+	public Empleado(String nombre, Integer legajo, Integer horas) {
+		Calendar calendario = Calendar.getInstance();
+		calendario.set(1900,0,1);
+		this.nombre = nombre;
+		this.legajo = legajo;
+		this.horas = horas;
+		this.fecha = calendario;
+	}
+	
+	public Empleado(String nombre, Integer horas) {
+		Calendar calendario = Calendar.getInstance();
+		calendario.set(1900,0,1);
+		this.nombre = nombre;
+		this.horas = horas;
+		this.legajo = -9999;
+		this.fecha = calendario;
+	}
+	
+	public Empleado(String nombre, Calendar fecha, Integer horas) {
+		this.nombre = nombre;
+		this.fecha = fecha;
+		this.horas = horas;
+		this.legajo = -9999;
+	}
+	
+	public Empleado( ) {
+		
+	}
+	
 
 	/*
 	 * Metodos accesores
@@ -73,8 +103,14 @@ public class Empleado {
 		/*
 		 * Cambio el formato de fecha para mostrarlo de una forma mas corta
 		 */
+		if (fecha==null) {
+			return "Empleado [nombre=" + nombre + ", fecha=" + "null" + ", legajo=" + legajo + ", email=" + email
+					+ ", sueldo=" + sueldo + ", horas=" + horas + "]";
+		}
+		else {
 		SimpleDateFormat formateador = new SimpleDateFormat("dd/MM/yyyy");
 		return "Empleado [nombre=" + nombre + ", fecha=" + formateador.format(fecha.getTime()) + ", legajo=" + legajo + ", email=" + email
 				+ ", sueldo=" + sueldo + ", horas=" + horas + "]";
+		}
 	}	
 }
